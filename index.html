@@ -5,17 +5,93 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GOG Faith Church</title>
 
-<link rel="stylesheet" href="style.css">
-
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: white;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.7);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+nav a {
+  margin: 0 10px;
+  color: gold;
+  text-decoration: none;
+}
+
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1507692049790-de58290a4334') center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 50px;
+}
+
+.btn {
+  background: gold;
+  padding: 10px 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 20px;
+}
+
+.grid img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  padding: 15px;
+  border-radius: 50%;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo.png">
+    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png">
     <h2>GOG Faith Church</h2>
   </div>
 
@@ -24,50 +100,36 @@
     <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
-    <a href="#prayer">Prayer</a>
   </nav>
 </header>
 
-<section id="home" class="hero">
-  <div class="overlay"></div>
-  <div class="hero-text">
+<section class="hero" id="home">
+  <div>
     <h1>Welcome to GOG Faith Church</h1>
     <p>Transforming Lives Through Christ</p>
     <a href="#contact" class="btn">Join Us</a>
   </div>
 </section>
 
-<section id="about" class="section reveal">
+<section class="section" id="about">
   <h2>About Us</h2>
   <p>We are a spirit-filled church transforming lives through Christ.</p>
 </section>
 
-<section id="gallery" class="section reveal">
+<section class="section" id="gallery">
   <h2>Gallery</h2>
   <div class="grid">
-    <img src="church1.jpg">
-    <img src="church2.jpg">
-    <img src="church3.jpg">
+    <img src="https://images.unsplash.com/photo-1548625149-fc4a29cf7092">
+    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d">
   </div>
 </section>
 
-<section id="contact" class="section reveal">
+<section class="section" id="contact">
   <h2>Contact</h2>
-  <p>📞 8970669002</p>
-  <p>📍 Your Church Location</p>
-</section>
-
-<section id="prayer" class="section reveal">
-  <h2>Prayer Request</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <textarea placeholder="Your Prayer Request" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
+  <p>📞 <a href="tel:8970669002" style="color:gold;">+91 8970669002</a></p>
 </section>
 
 <a href="https://wa.me/918970669002" class="whatsapp">💬</a>
 
-<script src="script.js"></script>
 </body>
 </html>
