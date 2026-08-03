@@ -1,282 +1,63 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2869
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww29200\viewh15540\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="en">\
-<head>\
-<meta charset="UTF-8">\
-<meta name="viewport" content="width=device-width, initial-scale=1.0">\
-\
-<title>GOG Faith Church</title>\
-\
-<style>\
-:root \{\
-  --gold: #d4af37;\
-\}\
-\
-body \{\
-  margin: 0;\
-  font-family: 'Segoe UI', sans-serif;\
-  background: #0a0a0a;\
-  color: #fff;\
-  scroll-behavior: smooth;\
-\}\
-\
-/* NAV */\
-nav \{\
-  position: sticky;\
-  top: 0;\
-  background: rgba(0,0,0,0.9);\
-  display: flex;\
-  justify-content: space-between;\
-  padding: 15px 30px;\
-  align-items: center;\
-  border-bottom: 1px solid var(--gold);\
-\}\
-\
-nav img \{ height: 50px; \}\
-\
-nav a \{\
-  color: white;\
-  margin-left: 20px;\
-  text-decoration: none;\
-\}\
-\
-nav a:hover \{ color: var(--gold); \}\
-\
-/* HERO */\
-.hero \{\
-  height: 100vh;\
-  background:\
-    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.95)),\
-    url('church1.jpg') center/cover no-repeat;\
-  display: flex;\
-  justify-content: center;\
-  align-items: center;\
-  text-align: center;\
-\}\
-\
-.hero h1 \{\
-  font-size: 42px;\
-\}\
-\
-/* BUTTON */\
-.btn \{\
-  margin-top: 20px;\
-  padding: 12px 25px;\
-  border-radius: 30px;\
-  background: var(--gold);\
-  color: black;\
-  text-decoration: none;\
-  display: inline-block;\
-  box-shadow: 0 0 10px var(--gold);\
-\}\
-\
-.btn:hover \{\
-  box-shadow: 0 0 30px var(--gold);\
-\}\
-\
-/* SECTIONS */\
-section \{\
-  padding: 70px 20px;\
-  text-align: center;\
-\}\
-\
-h2 \{\
-  color: var(--gold);\
-\}\
-\
-/* ANIMATIONS */\
-.fade-up \{\
-  opacity: 0;\
-  transform: translateY(40px);\
-  transition: 1s;\
-\}\
-\
-.fade-up.show \{\
-  opacity: 1;\
-  transform: translateY(0);\
-\}\
-\
-.zoom-in \{\
-  opacity: 0;\
-  transform: scale(0.85);\
-  transition: 1s;\
-\}\
-\
-.zoom-in.show \{\
-  opacity: 1;\
-  transform: scale(1);\
-\}\
-\
-.glow \{\
-  color: var(--gold);\
-  text-shadow: 0 0 10px #d4af37, 0 0 30px #f5d67b;\
-  animation: glowPulse 2s infinite alternate;\
-\}\
-\
-@keyframes glowPulse \{\
-  from \{ text-shadow: 0 0 5px #d4af37; \}\
-  to \{ text-shadow: 0 0 25px #f5d67b; \}\
-\}\
-\
-/* SLIDER */\
-.slider \{\
-  width: 90%;\
-  margin: auto;\
-  overflow: hidden;\
-\}\
-\
-.slides \{\
-  display: flex;\
-  width: 400%;\
-  animation: slide 12s infinite;\
-\}\
-\
-.slides img \{\
-  width: 100%;\
-\}\
-\
-@keyframes slide \{\
-  0% \{margin-left: 0;\}\
-  25% \{margin-left: -100%;\}\
-  50% \{margin-left: -200%;\}\
-  75% \{margin-left: -300%;\}\
-  100% \{margin-left: 0;\}\
-\}\
-\
-/* FORM */\
-.prayer-form \{\
-  max-width: 500px;\
-  margin: auto;\
-  display: flex;\
-  flex-direction: column;\
-\}\
-\
-.prayer-form input,\
-.prayer-form textarea \{\
-  margin: 10px 0;\
-  padding: 12px;\
-  border-radius: 10px;\
-  border: none;\
-\}\
-\
-.prayer-form button \{\
-  background: var(--gold);\
-  border: none;\
-  padding: 12px;\
-  border-radius: 25px;\
-  cursor: pointer;\
-\}\
-\
-/* FOOTER */\
-footer \{\
-  background: #000;\
-  padding: 15px;\
-  color: #aaa;\
-\}\
-</style>\
-</head>\
-\
-<body>\
-\
-<nav>\
-  <img src="logo.png">\
-  <div>\
-    <a href="#home">Home</a>\
-    <a href="#services">Services</a>\
-    <a href="#gallery">Gallery</a>\
-    <a href="#contact">Contact</a>\
-    <a href="#prayer">Prayer</a>\
-  </div>\
-</nav>\
-\
-<!-- HERO -->\
-<section class="hero" id="home">\
-  <div>\
-    <h1 class="glow zoom-in">GOD OF GODS WORSHIP CENTER</h1>\
-    <p class="fade-up">Experience the Power & Presence of God</p>\
-    <a href="#contact" class="btn">Visit Us</a>\
-  </div>\
-</section>\
-\
-<!-- SERVICES -->\
-<section id="services" class="fade-up">\
-  <h2>Service Timings</h2>\
-  <p>Friday: 10:00 AM \'96 12:30 PM</p>\
-  <p>Sunday: 10:00 AM \'96 12:30 PM</p>\
-</section>\
-\
-<!-- ABOUT -->\
-<section class="zoom-in">\
-  <h2>About Us</h2>\
-  <p>\
-    GOG Faith Church is a Spirit-filled community where lives are transformed\
-    through faith, prayer, and the Word of God.\
-  </p>\
-</section>\
-\
-<!-- GALLERY -->\
-<section id="gallery" class="fade-up">\
-  <h2>Church Progress</h2>\
-  <div class="slider">\
-    <div class="slides">\
-      <img src="church1.jpg">\
-      <img src="church2.jpg">\
-      <img src="church3.jpg">\
-      <img src="church4.jpg">\
-    </div>\
-  </div>\
-</section>\
-\
-<!-- CONTACT -->\
-<section id="contact" class="zoom-in">\
-  <h2>Contact</h2>\
-  <p>
-\f1 \uc0\u55357 \u56525 
-\f0  Maddur, Mandya</p>\
-  <p>
-\f1 \uc0\u55357 \u56542 
-\f0  8970669002</p>\
-  <p>
-\f1 \uc0\u55357 \u56551 
-\f0  kumars89706690092@gmail.com</p>\
-</section>\
-\
-<!-- PRAYER FORM -->\
-<section id="prayer" class="fade-up">\
-  <h2>Prayer Request</h2>\
-\
-  <form action="https://formspree.io/f/yourcode" method="POST" class="prayer-form">\
-    <input type="text" name="name" placeholder="Your Name" required>\
-    <input type="email" name="email" placeholder="Your Email" required>\
-    <textarea name="message" placeholder="Write your prayer request..." required></textarea>\
-    <button type="submit">Submit Prayer</button>\
-  </form>\
-</section>\
-\
-<footer>\
-  <p>\'a9 2026 GOG Faith Church</p>\
-</footer>\
-\
-<script>\
-const elements = document.querySelectorAll(".fade-up, .zoom-in");\
-\
-window.addEventListener("scroll", () => \{\
-  elements.forEach(el => \{\
-    const position = el.getBoundingClientRect().top;\
-    const screenHeight = window.innerHeight;\
-\
-    if (position < screenHeight - 100) \{\
-      el.classList.add("show");\
-    \}\
-  \});\
-\});\
-</script>\
-\
-</body>\
-</html>}
+<title>GOG Faith Church</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+header {
+  background: black;
+  color: gold;
+  padding: 15px;
+}
+
+nav a {
+  color: gold;
+  margin: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h2>GOG Faith Church</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Gallery</a>
+    <a href="#">Contact</a>
+    <a href="#">Prayer</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <img src="church1.jpg" alt="Church">
+</div>
+
+<section>
+  <h1>GOD OF GODS WORSHIP CENTER</h1>
+  <p>Experience the Power & Presence of God</p>
+</section>
+
+</body>
+</html>
