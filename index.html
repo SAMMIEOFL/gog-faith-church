@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>GOG Faith Church</title>
 
 <style>
@@ -14,18 +15,17 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
   font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* NAVBAR */
 header {
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
-  background: black;
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.7);
   padding: 15px;
   text-align: center;
   z-index: 1000;
@@ -47,23 +47,32 @@ nav a:hover {
   color: white;
 }
 
-/* HERO */
+/* HERO SLIDER */
 .hero {
-  position: relative;
   height: 100vh;
+  position: relative;
   overflow: hidden;
 }
 
-.hero img {
+.slides img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
-  animation: zoom 10s infinite alternate;
+  position: absolute;
+  opacity: 0;
+  animation: slide 15s infinite;
 }
 
-@keyframes zoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+.slides img:nth-child(1) { animation-delay: 0s; }
+.slides img:nth-child(2) { animation-delay: 5s; }
+.slides img:nth-child(3) { animation-delay: 10s; }
+
+@keyframes slide {
+  0% {opacity:0;}
+  10% {opacity:1;}
+  30% {opacity:1;}
+  40% {opacity:0;}
+  100% {opacity:0;}
 }
 
 .hero-text {
@@ -73,27 +82,47 @@ nav a:hover {
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.5);
   padding: 30px;
   border-radius: 10px;
-  animation: fadeIn 2s ease-in;
+  animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0; transform: translate(-50%, -60%);}
-  to {opacity: 1; transform: translate(-50%, -50%);}
+  from {opacity:0; transform: translate(-50%, -60%);}
+  to {opacity:1; transform: translate(-50%, -50%);}
+}
+
+.hero button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: var(--gold);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* SECTIONS */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* GALLERY */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 15px;
 }
 
@@ -119,18 +148,17 @@ input, textarea {
   margin: 10px 0;
 }
 
-button {
-  background: var(--gold);
-  border: none;
-  padding: 10px;
-  width: 100%;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: black;
-  color: var(--gold);
+/* WHATSAPP BUTTON */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: green;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 /* FOOTER */
@@ -148,6 +176,7 @@ footer {
   <h2>GOG Faith Church</h2>
   <nav>
     <a href="#home">Home</a>
+    <a href="#about">About</a>
     <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
     <a href="#prayer">Prayer</a>
@@ -156,21 +185,27 @@ footer {
 
 <!-- HERO -->
 <div class="hero" id="home">
-  <img src="church1.jpg">
+  <div class="slides">
+    <img src="church1.jpg">
+    <img src="church1.jpg">
+    <img src="church1.jpg">
+  </div>
+
   <div class="hero-text">
     <h1>Welcome to GOG Faith Church</h1>
     <p>Experience the Power & Presence of God</p>
+    <button onclick="document.getElementById('prayer').scrollIntoView()">Send Prayer</button>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section>
+<section id="about" class="reveal">
   <h2>About Us</h2>
-  <p>We are a church dedicated to spreading the love, power, and presence of God.</p>
+  <p>We are a spirit-filled church transforming lives through Christ.</p>
 </section>
 
 <!-- GALLERY -->
-<section id="gallery">
+<section id="gallery" class="reveal">
   <h2>Gallery</h2>
   <div class="gallery">
     <img src="church1.jpg">
@@ -180,19 +215,23 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
-  <h2>Contact Us</h2>
+<section id="contact" class="reveal">
+  <h2>Contact</h2>
   <p>Email: gogfaithchurch@email.com</p>
   <p>Phone: +91 00000 00000</p>
+
+  <iframe 
+    src="https://maps.google.com/maps?q=church&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    width="100%" height="300" style="border:0;"></iframe>
 </section>
 
-<!-- PRAYER FORM -->
-<section id="prayer">
+<!-- PRAYER -->
+<section id="prayer" class="reveal">
   <h2>Prayer Request</h2>
   <form onsubmit="sendPrayer(event)">
     <input type="text" placeholder="Your Name" required>
     <textarea placeholder="Your Prayer Request" required></textarea>
-    <button type="submit">Submit Prayer</button>
+    <button type="submit">Submit</button>
   </form>
 </section>
 
@@ -200,11 +239,23 @@ footer {
   <p>© 2026 GOG Faith Church</p>
 </footer>
 
+<a class="whatsapp" href="https://wa.me/910000000000">💬</a>
+
 <script>
-function sendPrayer(e) {
+function sendPrayer(e){
   e.preventDefault();
-  alert("🙏 Your prayer request has been received!");
+  alert("🙏 Prayer received!");
 }
+
+/* SCROLL ANIMATION */
+window.addEventListener('scroll', function() {
+  document.querySelectorAll('.reveal').forEach(el => {
+    let top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      el.classList.add('active');
+    }
+  });
+});
 </script>
 
 </body>
